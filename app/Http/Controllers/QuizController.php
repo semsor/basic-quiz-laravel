@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class QuizController extends Controller
@@ -19,7 +20,17 @@ class QuizController extends Controller
     {
         $quiz = Quiz::find($id);
         $quiz_questions = $quiz->question;
-        return view('quiz.show', compact('quiz', 'quiz_questions'));
+
+        $quiz_questions_options = [];
+
+        foreach ($quiz_questions as $quiz_question) {
+            $quiz_questions_options = DB::table('quiz_question_options')
+                ->where('question_id', $quiz_question['id']);
+        }
+
+        dd($quiz_questions_options);
+
+        return view('quiz.show', compact('quiz', 'quiz_questions', 'quiz_questions_options'));
     }
 
     public function store(Request $request)
