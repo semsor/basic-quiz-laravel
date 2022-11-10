@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\QuizQuestionOption::create([
             'title' => 'QuizQuestionOption',
             'detail' => 'QuizQuestionOption',
-            'question_id' => 1,
+            'quiz_question_id' => 1,
             'is_correct' => true,
             'user_id' => 1,
         ]);

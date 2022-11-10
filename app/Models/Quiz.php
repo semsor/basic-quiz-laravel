@@ -13,7 +13,7 @@ class Quiz extends Model
         'title', 'detail', 'user_id'
     ];
 
-    public function question()
+    public function questions()
     {
         return $this->hasMany(QuizQuestion::class,'quiz_id', 'id');
     }
