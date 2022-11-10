@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index');
-Route::get('/quiz/{quiz}', [QuizController::class, 'show'])->name('quiz.show');
+Route::get('/quiz/{id}',  [QuizController::class, 'show'])->name('quiz.show')->where('id', '.*');;
 
