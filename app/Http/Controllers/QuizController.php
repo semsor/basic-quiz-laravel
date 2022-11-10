@@ -26,7 +26,7 @@ class QuizController extends Controller
             $quiz_question['options'] = QuizQuestion::find($quiz_question['id'])->options;
         }
 
-        return view('quiz.show', compact('quiz', 'quiz_questions'));
+        return view('quiz.show', compact('quiz'));
     }
 
     public function store(Request $request)
