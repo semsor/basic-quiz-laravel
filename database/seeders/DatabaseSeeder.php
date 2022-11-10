@@ -24,7 +24,23 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\Quiz::create([
             'title' => 'Quiz title',
-            'description' => 'Quiz description',
+            'detail' => 'Quiz detail',
+            'user_id' => 1,
+        ]);
+
+        \App\Models\QuizQuestion::create([
+            'title' => 'QuizQuestion title',
+            'detail' => 'QuizQuestion detail',
+            'quiz_id' => 1,
+            'user_id' => 1,
+        ]);
+
+        \App\Models\QuizQuestionOption::create([
+            'title' => 'QuizQuestionOption title',
+            'detail' => 'QuizQuestionOption title',
+            'question_id' => 1,
+            'is_correct' => true,
+            'user_id' => 1,
         ]);
     }
 }

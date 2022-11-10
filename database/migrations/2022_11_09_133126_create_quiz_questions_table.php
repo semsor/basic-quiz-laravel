@@ -14,7 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('quiz_questions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('title');
+            $table->string('detail');
+            $table->integer('quiz_id')->unsigned()->index();
+            $table->text('user_id');
             $table->timestamps();
         });
     }

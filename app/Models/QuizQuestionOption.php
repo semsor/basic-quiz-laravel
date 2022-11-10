@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class QuizQuestionOption extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title', 'detail', 'is_correct', 'question_id', 'user_id'
+    ];
+
+    public function question() {
+        return $this->belongsTo(QuizQuestion::class);
+    }
 }
