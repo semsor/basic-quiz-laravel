@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('detail');
-            $table->integer('quiz_id')->unsigned()->index();
+            $table->integer('quiz_id')->unsigned();
             $table->text('user_id');
             $table->timestamps();
         });

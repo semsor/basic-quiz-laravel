@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('detail');
             $table->boolean('is_correct');
-            $table->integer('question_id')->unsigned()->index();
+            $table->integer('question_id')->unsigned();
             $table->text('user_id');
             $table->timestamps();
         });

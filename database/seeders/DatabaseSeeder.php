@@ -21,23 +21,22 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-
         \App\Models\Quiz::create([
-            'title' => 'Quiz title',
-            'detail' => 'Quiz detail',
+            'title' => 'Quiz',
+            'detail' => 'Quiz',
             'user_id' => 1,
         ]);
 
         \App\Models\QuizQuestion::create([
-            'title' => 'QuizQuestion title',
-            'detail' => 'QuizQuestion detail',
+            'title' => 'QuizQuestion',
+            'detail' => 'QuizQuestion',
             'quiz_id' => 1,
             'user_id' => 1,
         ]);
 
         \App\Models\QuizQuestionOption::create([
-            'title' => 'QuizQuestionOption title',
-            'detail' => 'QuizQuestionOption title',
+            'title' => 'QuizQuestionOption',
+            'detail' => 'QuizQuestionOption',
             'question_id' => 1,
             'is_correct' => true,
             'user_id' => 1,

@@ -10,11 +10,11 @@ class Quiz extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title', 'detail', 'lesson_id', 'user_id'
+        'title', 'detail', 'user_id'
     ];
 
     public function question()
     {
-        return $this->hasMany(QuizQuestion::class);
+        return $this->hasMany(QuizQuestion::class, 'quiz_id', 'id');
     }
 }

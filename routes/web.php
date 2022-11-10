@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/quizzes', [QuizController::class, 'index'])->name('quiz.index');
+Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index');
+Route::get('/quiz/{quiz}', [QuizController::class, 'show'])->name('quiz.show');
 
