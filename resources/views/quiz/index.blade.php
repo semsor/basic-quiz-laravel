@@ -1,6 +1,8 @@
-@extends('layouts.app')
+<x-app-layout>
 
-<a href="{{ url('/quiz-create') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Create quiz</a>
+<a href="{{ url('/quiz-create') }}" class="text-sm text-gray-700 underline">Create quiz</a>
 
 {{$quizzes}}
+
+</x-app-layout>
 

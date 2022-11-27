@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<x-app-layout>
 
 
 <form action="/quiz-create/">
@@ -8,3 +8,5 @@
     <input type="text" name="detail">
     <button type="submit">Save</button>
 </form>
+
+</x-app-layout>

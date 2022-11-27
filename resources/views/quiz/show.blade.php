@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<x-app-layout>
 {{$quiz}}
 <h2>{{$quiz->title}}</h2>
 @foreach ($quiz['questions'] as $question)
@@ -12,6 +12,8 @@
         @endforeach
     </fieldset>
 @endforeach
+
+</x-app-layout>
 
 
 
