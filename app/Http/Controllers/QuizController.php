@@ -37,8 +37,6 @@ class QuizController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);
-
         $input = $request->all();
         $input['user_id'] = Auth::user()->id;
         Quiz::create($input);
