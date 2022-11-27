@@ -13,7 +13,7 @@ class QuizQuestionController extends Controller
     {
         $quiz = Quiz::find($quiz);
         $question = QuizQuestion::find($question);
-        return view('question.show', compact('quiz', 'question'));
+        return view('quiz.question.show', compact('quiz', 'question'));
     }
 
     public function store(Request $request, $quiz_id)

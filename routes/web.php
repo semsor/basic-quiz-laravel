@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizQuestionController;
+use App\Http\Controllers\QuizQuestionOptionController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -37,6 +38,9 @@ Route::post('/quiz/{quiz}/', [QuizQuestionController::class, 'store'])
 
 Route::get('/quiz/{quiz}/{question}/', [QuizQuestionController::class, 'show'])
     ->name('question.show');
+
+Route::post('/quiz/{quiz}/{question}/', [QuizQuestionOptionController::class, 'store'])
+    ->name('option.store');
 
 
 Route::get('/dashboard', function () {
