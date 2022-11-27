@@ -7,16 +7,15 @@ use App\Models\QuizQuestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class QuizQuiestionController extends Controller
+class QuizQuestionController extends Controller
 {
-    public function store(Request $request)
+    public function store(Request $request, $quiz_id)
     {
-
         $input = $request->all();
         $input['user_id'] = Auth::user()->id;
+        $input['quiz_id'] = $quiz_id;
         QuizQuestion::create($input);
 
-        $quizzes = Quiz::all();
-        return view('quiz.index', compact('quizzes'));
+        return redirect('/quiz/' . $quiz_id);
     }
 }

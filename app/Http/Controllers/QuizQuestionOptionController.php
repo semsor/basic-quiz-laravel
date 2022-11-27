@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class QuizQuiestionOptionController extends Controller
+class QuizQuestionOptionController extends Controller
 {
     //
 }

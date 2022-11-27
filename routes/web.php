@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizQuestionController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -22,15 +23,22 @@ Route::get('/', function () {
 Route::get('/quiz', [QuizController::class, 'index'])
     ->name('quiz.index');
 
+Route::get('/quiz/create/', [QuizController::class, 'create'])
+    ->name('quiz.create');
+
+Route::post('/quiz/create/', [QuizController::class, 'store'])
+    ->name('quiz.store');
+
 Route::get('/quiz/{id}', [QuizController::class, 'show'])
     ->name('quiz.show')
     ->where('id', '.*');
 
-Route::get('/quiz-create/', [QuizController::class, 'create'])
-    ->name('quiz.create');
+Route::post('/quiz/{id}/create-question/', [QuizQuestionController::class, 'store'])
+    ->name('question.store');
 
-Route::post('/quiz-create/', [QuizController::class, 'store'])
-    ->name('quiz.store');
+Route::post('/quiz/{id}/{id}/', [QuizQuestionController::class, 'show'])
+    ->name('question.show');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

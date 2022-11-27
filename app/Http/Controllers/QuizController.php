@@ -17,6 +17,12 @@ class QuizController extends Controller
         return view('quiz.index', compact('quizzes'));
     }
 
+    public function create()
+    {
+        return view('quiz.create');
+    }
+
+
     public function show($id)
     {
         $quiz = Quiz::find($id);
@@ -27,11 +33,6 @@ class QuizController extends Controller
         }
 
         return view('quiz.show', compact('quiz'));
-    }
-
-    public function create()
-    {
-        return view('quiz.create');
     }
 
     public function store(Request $request)
