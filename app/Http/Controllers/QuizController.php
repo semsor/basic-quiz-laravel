@@ -29,8 +29,15 @@ class QuizController extends Controller
         return view('quiz.show', compact('quiz'));
     }
 
+    public function create()
+    {
+        return view('quiz.create');
+    }
+
     public function store(Request $request)
     {
+
+        dd($request);
 
         $input = $request->all();
         $input['user_id'] = Auth::user()->id;
