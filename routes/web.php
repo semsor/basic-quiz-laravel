@@ -29,14 +29,13 @@ Route::get('/quiz/create/', [QuizController::class, 'create'])
 Route::post('/quiz/create/', [QuizController::class, 'store'])
     ->name('quiz.store');
 
-Route::get('/quiz/{id}', [QuizController::class, 'show'])
-    ->name('quiz.show')
-    ->where('id', '.*');
+Route::get('/quiz/{quiz}/', [QuizController::class, 'show'])
+    ->name('quiz.show');
 
-Route::post('/quiz/{id}/create-question/', [QuizQuestionController::class, 'store'])
+Route::post('/quiz/{quiz}/', [QuizQuestionController::class, 'store'])
     ->name('question.store');
 
-Route::post('/quiz/{id}/{id}/', [QuizQuestionController::class, 'show'])
+Route::get('/quiz/{quiz}/{question}/', [QuizQuestionController::class, 'show'])
     ->name('question.show');
 
 

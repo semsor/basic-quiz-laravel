@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class QuizQuestionController extends Controller
 {
+    public function show($quiz, $question)
+    {
+        $quiz = Quiz::find($quiz);
+        $question = QuizQuestion::find($question);
+        return view('question.show', compact('quiz', 'question'));
+    }
+
     public function store(Request $request, $quiz_id)
     {
         $input = $request->all();
