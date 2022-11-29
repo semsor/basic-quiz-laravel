@@ -3,7 +3,20 @@
     {{$quiz}}
     <hr>
     {{$question}}
+    <hr>
+    {{$options}}
 
+    <hr>
+
+    <fieldset>
+
+        @foreach ($options as $option)
+            <div>
+                <input type="radio" id="{{$option->id}}" name="{{$question->id}}" value="{{$option->title}}">
+                <label for="{{$option->id}}"> {{ $option->title }} </label>
+            </div>
+        @endforeach
+    </fieldset>
 
     <form method="POST" action="{{route('option.store', [$quiz->id, $question->id])}}/">
         @csrf

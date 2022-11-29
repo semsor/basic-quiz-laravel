@@ -41,8 +41,6 @@ class QuizController extends Controller
         $input = $request->all();
         $input['user_id'] = Auth::user()->id;
         Quiz::create($input);
-
-        $quizzes = Quiz::all();
-        return view('quiz.index', compact('quizzes'));
+        return redirect('/quiz/');
     }
 }

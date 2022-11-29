@@ -13,8 +13,9 @@ class QuizQuestionOptionController extends Controller
     {
         $input = $request->all();
         $input['user_id'] = Auth::user()->id;
-        $input['quiz_question_id'] = $question;
+        $input['quiz_question_id'] = 1;
         $input['is_correct'] = 1;
         QuizQuestionOption::create($input);
+        return redirect('/quiz/' . $quiz . "/" . $question);
     }
 }
