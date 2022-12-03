@@ -25,8 +25,14 @@ Route::get('/', function () {
 Route::get('/learn', [LearnController::class, 'index'])
     ->name('learn.index');
 
+Route::get('/learn/result/', [LearnController::class, 'result'])
+    ->name('learn.result');
+
 Route::get('/learn/{quiz}/', [LearnController::class, 'show'])
     ->name('learn.show');
+
+Route::post('/learn/{quiz}/', [LearnController::class, 'store'])
+    ->name('learn.store');
 
 Route::get('/quiz', [QuizController::class, 'index'])
     ->name('quiz.index');
