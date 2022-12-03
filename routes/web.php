@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuizQuestionController;
 use App\Http\Controllers\QuizQuestionOptionController;
+use App\Http\Controllers\LearnController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -20,6 +21,12 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/learn', [LearnController::class, 'index'])
+    ->name('learn.index');
+
+Route::get('/learn/{quiz}/', [LearnController::class, 'show'])
+    ->name('learn.show');
 
 Route::get('/quiz', [QuizController::class, 'index'])
     ->name('quiz.index');

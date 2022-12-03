@@ -15,7 +15,7 @@ class QuizQuestionController extends Controller
         $quiz = Quiz::find($quiz);
         $question = QuizQuestion::find($question);
         $options = QuizQuestionOption::where('quiz_question_id', $question->id)->get();
-        return view('quiz.question.show', compact('quiz', 'question', 'options'));
+        return view('quiz.question', compact('quiz', 'question', 'options'));
     }
 
     public function store(Request $request, $quiz_id)
