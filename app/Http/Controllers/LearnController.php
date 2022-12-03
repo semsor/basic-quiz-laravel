@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Quiz;
 use App\Models\QuizQuestion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LearnController extends Controller
 {
@@ -24,5 +25,14 @@ class LearnController extends Controller
         }
 
         return view('learn.show', compact('quiz'));
+    }
+
+    public function store(Request $request)
+    {
+
+        $input = $request->all();
+        $input['user_id'] = Auth::user()->id;
+        Learn::create($input);
+        return redirect('/learn/');
     }
 }
